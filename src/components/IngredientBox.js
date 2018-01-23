@@ -7,7 +7,7 @@ const IngredientBox = props => {
     return(
         <div className="box">
 
-            <Header>
+            <Header title="Select a Recipe">
                 Select a Recipe
             </Header>
 

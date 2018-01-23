@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './components/utility/Header';
-import RecipeBox from './components/RecipeBox';
+import RecipeBoxContainer from './containers/RecipeBoxContainer';
 import IngredientBox from './components/IngredientBox';
 
 const App = props => {
@@ -13,13 +13,14 @@ const App = props => {
             </Header>
 
             <div className="app">
-                <RecipeBox/>
+                <RecipeBoxContainer/>
                 <IngredientBox/>
             </div>
 
             <footer>
                 Code & Design by Juan Gonzalez
             </footer>
+
         </div>
     );
 };
