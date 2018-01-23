@@ -1,6 +1,15 @@
 const initialState = {
 
-    recipes: [],
+    recipes: [
+        {
+            name: "Lemon Pie",
+            ingredients: ["lemons", "pie crust"]
+        },
+        {
+            name: "Apple Pie",
+            ingredients: ["apples", "pie crust"]
+        }
+    ],
     selectedRecipe: null,
     dirtyRecipe: null,
     editing: false
