@@ -1,7 +1,7 @@
 import React from 'react';
-import Scrollable from './Scrollable';
+import Scrollable from './utility/Scrollable';
 import Recipe from './Recipe';
-import Button from './Button';
+import Button from './utility/Button';
 
 const RecipeBox = props => {
 
