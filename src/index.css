@@ -12,6 +12,24 @@ footer {
   margin: 10px;
 }
 
+/* Utility Component Styles */
+
+.scrollable {
+
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: auto;
+}
+
+.recipe-btn {
+
+  align-self: flex-end;
+  margin-top: auto;
+  padding: 8px;
+}
+
+/* General Component Styles */
+
 .root {
 
   display: flex;
@@ -26,7 +44,7 @@ footer {
   height: 100%;
 }
 
-.recipe-box {
+.box {
 
   display: flex;
   flex-direction: column;
@@ -35,13 +53,6 @@ footer {
   padding: 10px;
   text-align: center;
   border: 1px solid lightgrey;
-}
-
-.scrollable {
-
-  display: flex;
-  flex-wrap: wrap;
-  overflow-y: auto;
 }
 
 .recipe {
