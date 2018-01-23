@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Recipe = (props) => {
+const Recipe = props => {
 
     return (
         <div className="recipe" onClick={props.handleSelect}>

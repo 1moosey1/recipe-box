@@ -1,14 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
+import RecipeBox from './components/RecipeBox';
 
-class App extends Component {
+const App = props => {
 
-    render() {
+    return (
+        <div className="root">
 
-        return (
-            <div>
+            <div className="app">
+                <RecipeBox/>
             </div>
-        );
-    }
-}
+
+            <footer>
+                Code & Design by Juan Gonzalez
+            </footer>
+        </div>
+    );
+};
 
 export default App;

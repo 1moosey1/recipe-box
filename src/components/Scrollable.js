@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Scrollable = (props) => {
+const Scrollable = props => {
 
     return(
         <div className="scrollable">
