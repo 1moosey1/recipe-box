@@ -5,15 +5,16 @@ const Recipe = props => {
 
     return (
         <div className="recipe" onClick={props.handleSelect}>
-            {props.title}
+            {props.children}
         </div>
     );
 };
 
 Recipe.propTypes = {
 
-    title: PropTypes.string.isRequired,
-    handleSelect: PropTypes.func
+    children: PropTypes.string.isRequired,
+    handleSelect: PropTypes.func,
+    id: PropTypes.number
 };
 
 export default Recipe;
