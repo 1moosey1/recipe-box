@@ -2,20 +2,17 @@ import React from 'react';
 import Header from './utility/Header';
 import Scrollable from './utility/Scrollable';
 
-const IngredientBox = props => {
+const IngredientBox = () => (
+  <div className="box">
 
-    return(
-        <div className="box">
+    <Header>
+      Select a Recipe
+    </Header>
 
-            <Header title="Select a Recipe">
-                Select a Recipe
-            </Header>
+    <Scrollable>
+    </Scrollable>
 
-            <Scrollable>
-            </Scrollable>
-
-        </div>
-    );
-};
+  </div>
+);
 
 export default IngredientBox;

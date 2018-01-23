@@ -3,26 +3,23 @@ import Header from './components/utility/Header';
 import RecipeBoxContainer from './containers/RecipeBoxContainer';
 import IngredientBox from './components/IngredientBox';
 
-const App = props => {
+const App = () => (
+  <div className="root">
 
-    return (
-        <div className="root">
+    <Header>
+      Custom Recipe Box
+    </Header>
 
-            <Header>
-               Custom Recipe Box
-            </Header>
+    <div className="app">
+      <RecipeBoxContainer />
+      <IngredientBox />
+    </div>
 
-            <div className="app">
-                <RecipeBoxContainer/>
-                <IngredientBox/>
-            </div>
+    <footer>
+      Code & Design by Juan Gonzalez
+    </footer>
 
-            <footer>
-                Code & Design by Juan Gonzalez
-            </footer>
-
-        </div>
-    );
-};
+  </div>
+);
 
 export default App;
