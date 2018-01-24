@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Header from './utility/Header';
 import Scrollable from './utility/Scrollable';
 import RecipeContainer from '../containers/RecipeContainer';
-import Button from './utility/Button';
+import AddRecipeBtn from '../containers/AddRecipeBtn';
 
 const RecipeBox = (props) => {
   let { recipes } = props;
@@ -25,9 +25,9 @@ const RecipeBox = (props) => {
         {recipes}
       </Scrollable>
 
-      <Button className="recipe-btn">
+      <AddRecipeBtn className="recipe-btn">
         + Recipe
-      </Button>
+      </AddRecipeBtn>
 
     </div>
   );

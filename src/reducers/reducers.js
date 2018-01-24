@@ -24,10 +24,8 @@ function recipeAdded(state, action) {
     ingredients: []
   };
 
-  state.recipes.push(newRecipe);
-
   return Object.assign({}, state, {
-    recipes: state.recipes,
+    recipes: [...state.recipes, newRecipe],
     selectedRecipe: newRecipe,
     dirtyRecipe: null,
     editing: true

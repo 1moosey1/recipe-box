@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import Recipe from '../components/Recipe';
 import { selectRecipeAction } from '../actions/actions';
+import Recipe from '../components/Recipe';
 
 const mapDispatchToProps = dispatch => (
   { handleSelect: id => () => dispatch(selectRecipeAction(id)) }
