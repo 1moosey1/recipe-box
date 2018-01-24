@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './components/utility/Header';
 import RecipeBoxContainer from './containers/RecipeBoxContainer';
-import IngredientBox from './components/IngredientBox';
+import IngredientBoxContainer from './containers/IngredientBoxContainer';
 
 const App = () => (
   <div className="root">
@@ -12,7 +12,7 @@ const App = () => (
 
     <div className="app">
       <RecipeBoxContainer />
-      <IngredientBox />
+      <IngredientBoxContainer />
     </div>
 
     <footer>

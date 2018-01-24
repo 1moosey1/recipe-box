@@ -1,6 +1,5 @@
 // Actions Types
 export const ActionTypes = {
-
   ADD_RECIPE: 'ADD_RECIPE',
   REMOVE_RECIPE: 'REMOVE_RECIPE',
   EDIT_RECIPE: 'EDIT_RECIPE',
@@ -12,9 +11,10 @@ export const ActionTypes = {
 };
 
 // Actions Creators
-export function selectRecipeAction() {
+export function selectRecipeAction(recipeId) {
   return {
 
-    type: ActionTypes.SELECT_RECIPE
+    type: ActionTypes.SELECT_RECIPE,
+    id: recipeId
   };
 }

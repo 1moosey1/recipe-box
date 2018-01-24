@@ -50,13 +50,13 @@ footer {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  margin: 10px;
+  margin: 15px;
   padding: 10px;
   text-align: center;
   border: 1px solid lightgrey;
 }
 
-.recipe {
+.recipe, .ingredient {
 
   margin: 6px;
   padding: 6px;

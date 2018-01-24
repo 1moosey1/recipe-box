@@ -1,18 +1,44 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Header from './utility/Header';
 import Scrollable from './utility/Scrollable';
+import Ingredient from './Ingredient';
 
-const IngredientBox = () => (
-  <div className="box">
+const IngredientBox = (props) => {
 
-    <Header>
-      Select a Recipe
-    </Header>
+  const { recipe } = props;
+  let header = 'Select a Recipe';
+  let ingredients = [];
 
-    <Scrollable>
-    </Scrollable>
+  if (recipe) {
+    header = recipe.name;
+    ingredients = recipe.ingredients.map(ingredient => (
+      <Ingredient key={ingredient}>
+        {ingredient}
+      </Ingredient>
+    ));
+  }
 
-  </div>
-);
+  return (
+    <div className="box">
+
+      <Header>
+        {header}
+      </Header>
+
+      <Scrollable>
+        {ingredients}
+      </Scrollable>
+
+    </div>
+  );
+};
+
+IngredientBox.propTypes = {
+  recipe: PropTypes.shape({
+    name: PropTypes.string,
+    ingredients: PropTypes.arrayOf(PropTypes.string)
+  })
+};
 
 export default IngredientBox;

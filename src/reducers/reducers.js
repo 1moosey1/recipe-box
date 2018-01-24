@@ -1,3 +1,5 @@
+import { ActionTypes } from '../actions/actions';
+
 const initialState = {
 
   recipes: [
@@ -15,9 +17,22 @@ const initialState = {
   editing: false
 };
 
+function recipeSelected(state, action) {
+  return Object.assign({}, state, {
+    selectedRecipe: state.recipes[action.id],
+    dirtyRecipe: null,
+    editing: false
+  });
+}
+
 export default (state = initialState, action) => {
   switch (action.type) {
+
+    case ActionTypes.SELECT_RECIPE:
+      return recipeSelected(state, action);
+
     default:
       return state;
+
   }
 };
