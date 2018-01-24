@@ -11,9 +11,15 @@ export const ActionTypes = {
 };
 
 // Actions Creators
+export function addRecipeAction(recipeName) {
+  return {
+    type: ActionTypes.ADD_RECIPE,
+    recipe: recipeName
+  };
+}
+
 export function selectRecipeAction(recipeId) {
   return {
-
     type: ActionTypes.SELECT_RECIPE,
     id: recipeId
   };

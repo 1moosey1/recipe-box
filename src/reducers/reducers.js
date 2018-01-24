@@ -17,6 +17,24 @@ const initialState = {
   editing: false
 };
 
+// Add new recipe to state
+function recipeAdded(state, action) {
+  const newRecipe = {
+    name: action.recipe,
+    ingredients: []
+  };
+
+  state.recipes.push(newRecipe);
+
+  return Object.assign({}, state, {
+    recipes: state.recipes,
+    selectedRecipe: newRecipe,
+    dirtyRecipe: null,
+    editing: true
+  });
+}
+
+// Recipe has been selected
 function recipeSelected(state, action) {
   return Object.assign({}, state, {
     selectedRecipe: state.recipes[action.id],
@@ -27,6 +45,9 @@ function recipeSelected(state, action) {
 
 export default (state = initialState, action) => {
   switch (action.type) {
+
+    case ActionTypes.ADD_RECIPE:
+      return recipeAdded(state, action);
 
     case ActionTypes.SELECT_RECIPE:
       return recipeSelected(state, action);
