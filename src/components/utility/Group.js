@@ -1,17 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Scrollable = props => (
-  <div className="scrollable">
-    {props.children}
+const Group = props => (
+  <div className={props.className}>
+    { props.children }
   </div>
 );
 
-Scrollable.propTypes = {
+Group.propTypes = {
+  className: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.element,
     PropTypes.arrayOf(PropTypes.element)
   ])
 };
 
-export default Scrollable;
+export default Group;

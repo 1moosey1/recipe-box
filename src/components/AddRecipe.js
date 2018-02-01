@@ -25,13 +25,13 @@ class AddRecipe extends Component {
 
   render() {
     return (
-      <div className="add-recipe">
+      <div className="flex-bot-right">
 
         <TextInput onChange={this.textHandler}>
           {this.state.text}
         </TextInput>
 
-        <Button className="add-btn" onClick={this.buttonHandler}>
+        <Button className="btn" onClick={this.buttonHandler}>
           + Recipe
         </Button>
 

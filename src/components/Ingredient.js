@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Ingredient = (props) => (
+const Ingredient = props => (
   <div className="ingredient">
     {props.children}
   </div>

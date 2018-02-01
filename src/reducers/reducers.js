@@ -12,7 +12,7 @@ const initialState = {
       ingredients: ['apples', 'pie crust']
     }
   ],
-  selectedRecipe: null,
+  selectedRecipe: -1,
   dirtyRecipe: null,
   editing: false
 };
@@ -26,16 +26,26 @@ function recipeAdded(state, action) {
 
   return Object.assign({}, state, {
     recipes: [...state.recipes, newRecipe],
-    selectedRecipe: newRecipe,
-    dirtyRecipe: null,
+    selectedRecipe: state.recipes.length,
+    dirtyRecipe: null, // fix --------------------------------------------
     editing: true
+  });
+}
+
+// Delete selected recipe from recipes list
+function recipeRemoved(state) {
+  state.recipes.splice(state.selectedRecipe, 1);
+
+  return Object.assign({}, state, {
+    recipes: [...state.recipes],
+    selectedRecipe: -1
   });
 }
 
 // Recipe has been selected
 function recipeSelected(state, action) {
   return Object.assign({}, state, {
-    selectedRecipe: state.recipes[action.id],
+    selectedRecipe: action.id,
     dirtyRecipe: null,
     editing: false
   });
@@ -46,6 +56,9 @@ export default (state = initialState, action) => {
 
     case ActionTypes.ADD_RECIPE:
       return recipeAdded(state, action);
+
+    case ActionTypes.REMOVE_RECIPE:
+      return recipeRemoved(state);
 
     case ActionTypes.SELECT_RECIPE:
       return recipeSelected(state, action);

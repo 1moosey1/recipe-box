@@ -18,6 +18,12 @@ export function addRecipeAction(recipeName) {
   };
 }
 
+export function removeRecipeAction() {
+  return {
+    type: ActionTypes.REMOVE_RECIPE
+  };
+}
+
 export function selectRecipeAction(recipeId) {
   return {
     type: ActionTypes.SELECT_RECIPE,

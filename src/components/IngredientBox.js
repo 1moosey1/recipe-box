@@ -1,23 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Header from './utility/Header';
-import Scrollable from './utility/Scrollable';
-import Ingredient from './Ingredient';
+import Ingredients from './Ingredients';
+import EditButtonsContainer from '../containers/EditButtonsContainer';
 
 const IngredientBox = (props) => {
 
   const { recipe } = props;
-  let header = 'Select a Recipe';
-  let ingredients = [];
-
-  if (recipe) {
-    header = recipe.name;
-    ingredients = recipe.ingredients.map(ingredient => (
-      <Ingredient key={ingredient}>
-        {ingredient}
-      </Ingredient>
-    ));
-  }
+  const header = typeof recipe !== 'undefined' ? recipe.name : 'Select a Recipe';
+  const ingredients = typeof recipe !== 'undefined' ? recipe.ingredients : [];
 
   return (
     <div className="box">
@@ -26,9 +17,9 @@ const IngredientBox = (props) => {
         {header}
       </Header>
 
-      <Scrollable>
-        {ingredients}
-      </Scrollable>
+      <Ingredients ingredients={ingredients} />
+
+      <EditButtonsContainer />
 
     </div>
   );
