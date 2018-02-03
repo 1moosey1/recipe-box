@@ -27,7 +27,7 @@ function recipeAdded(state, action) {
   return Object.assign({}, state, {
     recipes: [...state.recipes, newRecipe],
     selectedRecipe: state.recipes.length,
-    dirtyRecipe: null, // fix --------------------------------------------
+    dirtyRecipe: Object.assign({}, newRecipe),
     editing: true
   });
 }
