@@ -34,7 +34,10 @@ function recipeAdded(state, action) {
 
 // Delete selected recipe from recipes list
 function recipeRemoved(state) {
-  state.recipes.splice(state.selectedRecipe, 1);
+
+  if (state.selectedRecipe >= 0) {
+    state.recipes.splice(state.selectedRecipe, 1);
+  }
 
   return Object.assign({}, state, {
     recipes: [...state.recipes],
