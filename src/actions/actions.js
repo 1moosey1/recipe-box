@@ -30,3 +30,18 @@ export function selectRecipeAction(recipeId) {
     id: recipeId
   };
 }
+
+export function removeIngredientAction(ingredientId) {
+  return {
+    type: ActionTypes.REMOVE_INGREDIENT,
+    id: ingredientId
+  };
+}
+
+export function editIngredientAction(ingredientName, ingredientId) {
+  return {
+    type: ActionTypes.EDIT_INGREDIENT,
+    ingredient: ingredientName,
+    id: ingredientId
+  };
+}
