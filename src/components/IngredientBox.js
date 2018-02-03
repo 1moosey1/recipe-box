@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Header from './utility/Header';
 import Ingredients from './Ingredients';
-import EditButtonsContainer from '../containers/EditButtonsContainer';
+import EditButtonsContainer from '../containers/EditButtonsC';
 
 const IngredientBox = (props) => {
 

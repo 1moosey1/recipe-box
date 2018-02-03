@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Header from './utility/Header';
 import Scrollable from './utility/Scrollable';
-import RecipeContainer from '../containers/RecipeContainer';
-import AddRecipeContainer from '../containers/AddRecipeContainer';
+import RecipeContainer from '../containers/RecipeC';
+import AddRecipeContainer from '../containers/AddRecipeC';
 
 const RecipeBox = (props) => {
   let { recipes } = props;

@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './components/utility/Header';
-import RecipeBoxContainer from './containers/RecipeBoxContainer';
-import IngredientBoxContainer from './containers/IngredientBoxContainer';
+import RecipeBoxContainer from './containers/RecipeBoxC';
+import IngredientBoxContainer from './containers/IngredientBoxC';
 
 const App = () => (
   <div className="root">
