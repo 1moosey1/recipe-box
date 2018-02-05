@@ -19,9 +19,11 @@ export function addRecipeAction(recipeName) {
 }
 
 export function removeRecipeAction() {
-  return {
-    type: ActionTypes.REMOVE_RECIPE
-  };
+  return { type: ActionTypes.REMOVE_RECIPE };
+}
+
+export function editRecipeAction() {
+  return { type: ActionTypes.EDIT_RECIPE };
 }
 
 export function selectRecipeAction(recipeId) {
