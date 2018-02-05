@@ -4,7 +4,6 @@ import Group from './utility/Group';
 import Button from './utility/Button';
 
 const EditButtons = props => (
-
   <Group className="flex-bot-right">
 
     <Button className="btn" onClick={props.onDelete}>
