@@ -7,11 +7,11 @@ const EditButtons = props => (
 
   <Group className="flex-bot-right">
 
-    <Button className="btn" onClick={props.handleDelete}>
+    <Button className="btn" onClick={props.onDelete}>
       Delete
     </Button>
 
-    <Button className="btn" onClick={props.handleEdit}>
+    <Button className="btn" onClick={props.onEdit}>
       Edit
     </Button>
 
@@ -19,8 +19,8 @@ const EditButtons = props => (
 );
 
 EditButtons.propTypes = {
-  handleDelete: PropTypes.func.isRequired,
-  handleEdit: PropTypes.func.isRequired
+  onDelete: PropTypes.func.isRequired,
+  onEdit: PropTypes.func.isRequired
 };
 
 export default EditButtons;
