@@ -5,6 +5,7 @@ export const ActionTypes = {
   EDIT_RECIPE: 'EDIT_RECIPE',
   SAVE_RECIPE: 'SAVE_RECIPE',
   SELECT_RECIPE: 'SELECT_RECIPE',
+  CANCEL_RECIPE: 'CANCEL_RECIPE',
   ADD_INGREDIENT: 'ADD_INGREDIENT',
   REMOVE_INGREDIENT: 'REMOVE_INGREDIENT',
   EDIT_INGREDIENT: 'EDIT_INGREDIENT'
@@ -26,11 +27,19 @@ export function editRecipeAction() {
   return { type: ActionTypes.EDIT_RECIPE };
 }
 
+export function saveRecipeAction() {
+  return { type: ActionTypes.SAVE_RECIPE };
+}
+
 export function selectRecipeAction(recipeId) {
   return {
     type: ActionTypes.SELECT_RECIPE,
     id: recipeId
   };
+}
+
+export function cancelRecipeAction() {
+  return { type: ActionTypes.CANCEL_RECIPE };
 }
 
 export function removeIngredientAction(ingredientId) {
