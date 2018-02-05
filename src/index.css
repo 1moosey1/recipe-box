@@ -12,6 +12,13 @@ footer {
   margin: 10px;
 }
 
+input {
+
+  margin: 6px;
+  padding: 6px;
+  flex: 2;
+}
+
 /* Utility Component Styles */
 
 .scrollable {
@@ -65,6 +72,12 @@ footer {
   margin: 6px;
   padding: 6px;
   border: 1px solid lightgrey;
+  width: 100%;
+}
+
+.editable-ingredient {
+
+  display: flex;
   width: 100%;
 }
 
