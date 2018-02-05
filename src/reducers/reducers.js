@@ -1,7 +1,6 @@
 import { ActionTypes } from '../actions/actions';
 
 const initialState = {
-
   recipes: [
     {
       name: 'Lemon Pie',
@@ -17,7 +16,7 @@ const initialState = {
   editing: false
 };
 
-// Add new recipe to state
+// Add new recipe to recipes list
 function recipeAdded(state, action) {
   const newRecipe = {
     name: action.recipe,
@@ -34,7 +33,6 @@ function recipeAdded(state, action) {
 
 // Delete selected recipe from recipes list
 function recipeRemoved(state) {
-
   if (state.selectedRecipe >= 0) {
     state.recipes.splice(state.selectedRecipe, 1);
   }
@@ -42,6 +40,13 @@ function recipeRemoved(state) {
   return Object.assign({}, state, {
     recipes: [...state.recipes],
     selectedRecipe: -1
+  });
+}
+
+function recipeEdited(state) {
+  return Object.assign({}, state, {
+    dirtyRecipe: Object.assign({}, state.recipes[state.selectedRecipe]),
+    editing: true
   });
 }
 
@@ -54,6 +59,23 @@ function recipeSelected(state, action) {
   });
 }
 
+// Ingredient removed from selected recipe
+function ingredientRemoved(state, action) {
+  state.dirtyRecipe.ingredients.splice(action.id, 1);
+  return Object.assign({}, state, {
+    dirtyRecipe: Object.assign({}, state.dirtyRecipe)
+  });
+}
+
+// Ingredient edited from selected recipe
+function ingredientEdited(state, action) {
+  const { dirtyRecipe } = state.dirtyRecipe;
+  dirtyRecipe.ingredients[action.id] = action.ingredient;
+  return Object.assign({}, state, {
+    dirtyRecipe: Object.assign({}, dirtyRecipe)
+  });
+}
+
 export default (state = initialState, action) => {
   switch (action.type) {
 
@@ -63,8 +85,17 @@ export default (state = initialState, action) => {
     case ActionTypes.REMOVE_RECIPE:
       return recipeRemoved(state);
 
+    case ActionTypes.EDIT_RECIPE:
+      return recipeEdited(state);
+
     case ActionTypes.SELECT_RECIPE:
       return recipeSelected(state, action);
+
+    case ActionTypes.REMOVE_INGREDIENT:
+      return ingredientRemoved(state, action);
+
+    case ActionTypes.EDIT_INGREDIENT:
+      return ingredientEdited(state, action);
 
     default:
       return state;
