@@ -4,9 +4,9 @@ import TextInput from './utility/TextInput';
 import Button from './utility/Button';
 
 const EditableIngredient = props => (
-  <div>
+  <div className="editable-ingredient">
 
-    <TextInput onChange={props.onChange(props.index)}>
+    <TextInput className="edit-input" onChange={props.onChange(props.index)}>
       {props.children}
     </TextInput>
 
