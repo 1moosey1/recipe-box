@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
-import { removeRecipeAction } from '../actions/actions';
+import {editRecipeAction, removeRecipeAction} from '../actions/actions';
 import EditButtons from '../components/EditButtons';
 
 const mapDispatchToProps = dispatch => ({
-  handleDelete: () => dispatch(removeRecipeAction())
+  handleDelete: () => dispatch(removeRecipeAction()),
+  handleEdit: () => dispatch(editRecipeAction())
 });
 
 export default connect(null, mapDispatchToProps)(EditButtons);
